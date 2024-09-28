@@ -1,0 +1,103 @@
+  /* General styles for the body */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Light background color for the page */
+}
+
+/* Styling the account details containers */
+.accountdetails, .accountdetails2 {
+    font-size: 1.8em; /* Larger font size for account details */
+    margin-bottom: 20px; /* Space between account details */
+    color: #333; /* Dark text color for account details */
+    line-height: 1.5; /* Increased line height for readability */
+    width: 80%; /* Limit width to 80% for better layout */
+    text-align: center; /* Center-align text */
+    opacity: 0; /* Start with hidden details */
+    transform: translateY(20px); /* Move account details down initially */
+    animation: fadeInUp 1s forwards; /* Apply fade-in and move-up animation */
+}
+
+/* Animation to fade in and move account details up */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+/* Staggered animation for the second account detail */
+.accountdetails2 {
+    animation-delay: 0.5s; /* Add delay to make second detail appear after the first */
+}
+
+/* Styling the transaction container and its inner divs */
+.transactioncontainer {
+    display: grid; /* Use grid layout for the transaction options */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Space between transaction divs */
+    max-width: 600px; /* Limit container width */
+    margin: 20px auto; /* Center container and add margin */
+    text-align: center; /* Center-align text inside transaction divs */
+}
+
+/* Styling for individual transaction feedback divs */
+.deposit, .take, .check, .quit {
+    background-color: #fff; /* White background for transaction boxes */
+    border: 2px solid #ccc; /* Light gray border */
+    padding: 20px; /* Space inside transaction boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    font-size: 1.2em; /* Slightly larger font size */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect transitions */
+    display: flex; /* Flexbox for aligning content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* Hover effect to enhance interaction */
+.deposit:hover, .take:hover, .check:hover, .quit:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Specific text styles for different sections */
+.deposit {
+    color: green; /* Green text for deposit section */
+    border-color: green; /* Green border for deposit section */
+}
+
+.take {
+    color: red; /* Red text for withdrawal section */
+    border-color: red; /* Red border for withdrawal section */
+}
+
+.check {
+    color: blue; /* Blue text for balance check section */
+    border-color: blue; /* Blue border for balance check section */
+}
+
+.quit {
+    color: gray; /* Gray text for quit section */
+    font-weight: bold; /* Bold text for emphasis */
+    border-color: gray; /* Gray border for quit section */
+}
+
+/* Adding a subtle text shadow to make text pop more */
+.accountdetails, .accountdetails2, .transactioncontainer div {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Light text shadow for better contrast */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+    .transactioncontainer {
+        grid-template-columns: 1fr; /* Change to single-column layout on smaller screens */
+    }
+}
