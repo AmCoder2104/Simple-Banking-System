@@ -32,9 +32,9 @@ function createaccount() {
         // Prompt for the account name and check if the first character is uppercase
         let x = prompt("Enter Account name");
         if (x.charAt(0) == x.charAt(0).toUpperCase()) {
-            b.innerHTML = `Your account id is ${x}${num}`;
+            b.innerHTML = `Your Account id is ${x}${num}`;
             let accountId = `${x}${num}`; // Create the account ID using the name and account number
-            b.innerHTML = `Your account id is ${accountId}`;
+            b.innerHTML = `Your Account id is ${accountId}`;
 
             // Store the account number and account ID in localStorage
             localStorage.setItem("accountnumber", num);
